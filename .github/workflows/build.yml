@@ -113,7 +113,7 @@ jobs:
           install -p {antifilter-download,antifilter-download-community,refilter,win-spy,win-update,win-extra}.txt ./publish/
           install -p ./custom/publish/{ru-blocked,ru-blocked-all,discord,youtube,google,private,category-ads-all}.txt ./publish/
           
-          sha256sum ./publish/geosite.dat > ./publish/geosite.dat.sha256sum
+          (cd ./publish && sha256sum geosite.dat > geosite.dat.sha256sum)
 
       - name: Release and upload assets
         uses: svenstaro/upload-release-action@v2
